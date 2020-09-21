@@ -1,0 +1,28 @@
+ static long repeatedString(String s, long n) {
+        char firstChar = 'a'; // 'a'
+        long sameCharNum = 0; // how many string have 'a' 
+        long resultNum = 0; // return value
+        long stringLen = s.length(); // string length
+        	
+	
+            for(int i = 0; i < stringLen; i++){ 
+                if(firstChar == s.charAt(i)){
+                    sameCharNum++; // store 'a' number
+                }
+            }
+
+            if(sameCharNum != 0){ // if string don't have, return 0 
+                long repeatAllStringNum = n / stringLen;
+           	long remaindarRepeatNum = n % stringLen;
+
+            	resultNum = sameCharNum * repeatAllStringNum; 
+
+            	for(int i = 0; i < remaindarRepeatNum; i++){
+            	    if(firstChar == s.charAt(i)){
+             	       resultNum++;
+             	   }
+           	 }
+            }
+            
+        return resultNum;
+    }
